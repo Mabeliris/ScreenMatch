@@ -1,6 +1,4 @@
-package com.aluraproyectos.screeenmatch.modelo;
-
-import com.aluraproyectos.screeenmatch.calculos.Clasificacion;
+package com.aluraproyectos.screenmatch.modelo;
 
 public class Serie extends Titulo  {
 

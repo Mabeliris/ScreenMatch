@@ -1,4 +1,4 @@
-package com.aluraproyectos.screeenmatch.modelo;
+package com.aluraproyectos.screenmatch.modelo;
 
 public class Titulo {
 
@@ -15,6 +15,22 @@ public class Titulo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getFechaDeLanzamiento() {
+        return fechaDeLanzamiento;
+    }
+
+    public boolean isIncluidoEnElPlan() {
+        return incluidoEnElPlan;
+    }
+
+    public double getSumatoria() {
+        return sumatoria;
     }
 
     public int getDuracionEnMinutos() {

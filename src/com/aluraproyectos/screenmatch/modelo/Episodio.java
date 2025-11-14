@@ -1,6 +1,6 @@
-package com.aluraproyectos.screeenmatch.modelo;
+package com.aluraproyectos.screenmatch.modelo;
 
-import com.aluraproyectos.screeenmatch.calculos.Clasificacion;
+import com.aluraproyectos.screenmatch.calculos.Clasificacion;
 
 public class Episodio implements Clasificacion {
 

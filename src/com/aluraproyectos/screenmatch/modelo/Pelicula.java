@@ -1,6 +1,6 @@
-package com.aluraproyectos.screeenmatch.modelo;
+package com.aluraproyectos.screenmatch.modelo;
 
-import com.aluraproyectos.screeenmatch.calculos.Clasificacion;
+import com.aluraproyectos.screenmatch.calculos.Clasificacion;
 
 public class Pelicula extends Titulo implements Clasificacion {
  private String director;
@@ -16,5 +16,10 @@ public class Pelicula extends Titulo implements Clasificacion {
     @Override
     public int getClasificacion() {
         return (int) (calculoMedia()/2);
+    }
+
+    @Override
+    public String toString() {
+        return "Pelicula: " + this.getNombre() + " ("+ getFechaDeLanzamiento() + ")";
     }
 }

@@ -1,4 +1,4 @@
-package com.aluraproyectos.screeenmatch.calculos;
+package com.aluraproyectos.screenmatch.calculos;
 
 public class FiltroRecomendacion {
     public void filtra(Clasificacion clasificacion){
