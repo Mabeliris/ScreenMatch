@@ -4,9 +4,9 @@ import com.aluraproyectos.screenmatch.modelo.Titulo;
 
 public class CalculadoraDeTiempo {
 
-    private  int tiempoTotal;
+    private  String tiempoTotal;
 
-    public int getTiempoTotal() {
+    public String getTiempoTotal() {
         return tiempoTotal;
     }
 

@@ -1,13 +1,27 @@
 package com.aluraproyectos.screenmatch.modelo;
 
-public class Titulo {
+import com.google.gson.annotations.SerializedName;
 
+public class Titulo implements Comparable <Titulo> {
+
+    @SerializedName("Title")
     private String nombre;
-    private int duracionEnMinutos;
+
+    @SerializedName("Runtime")
+    private String duracionEnMinutos;
+
+    @SerializedName("Year")
     private int fechaDeLanzamiento;
+
+
     private boolean incluidoEnElPlan;
     private  double sumatoria;
     private int totalDeEvaluaciones;
+
+    public Titulo(String nombre, int fechaDeLanzamiento) {
+        this.nombre = nombre;
+        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
 
     public void setIncluidoEnElPlan(boolean incluidoEnElPlan) {
         this.incluidoEnElPlan = incluidoEnElPlan;
@@ -34,10 +48,12 @@ public class Titulo {
     }
 
     public int getDuracionEnMinutos() {
-        return duracionEnMinutos;
+
+
+        return Integer.parseInt(duracionEnMinutos.replaceAll("\\D+", ""));
     }
 
-    public void setDuracionEnMinutos(int duracionEnMinutos) {
+    public void setDuracionEnMinutos(String duracionEnMinutos) {
         this.duracionEnMinutos = duracionEnMinutos;
     }
 
@@ -50,13 +66,12 @@ public class Titulo {
     }
 
     public void muestraFichaTecnica(){
-        System.out.println("Mi pelicula es " + nombre);
-        System.out.println("y su fecha de lanzamiento fue " + fechaDeLanzamiento);
-        System.out.println("su duracion es " + duracionEnMinutos);
-        System.out.println("su puntuacion es " + sumatoria);
-
-
+        System.out.println("Mi titulo es " + nombre);
+        System.out.println("Fecha de lanzamiento: " + fechaDeLanzamiento);
+        System.out.println("Duración: " + getDuracionEnMinutos());
+        System.out.println("Puntuación: " + sumatoria);
     }
+
 
     public void evaluacion(double nota  ){
         sumatoria += nota;
@@ -65,5 +80,18 @@ public class Titulo {
 
     public double calculoMedia(){
         return sumatoria/totalDeEvaluaciones;
+    }
+
+    @Override
+    public int compareTo(Titulo otroTitulo) {
+        return this.getNombre().compareTo(otroTitulo.getNombre());
+    }
+
+    @Override
+    public String toString() {
+        return
+                "nombre='" + nombre + '\'' +
+                ", duracionEnMinutos=" + duracionEnMinutos +
+                ", fechaDeLanzamiento=" + fechaDeLanzamiento ;
     }
 }
